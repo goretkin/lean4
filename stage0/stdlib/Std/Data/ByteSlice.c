@@ -37,15 +37,18 @@ LEAN_EXPORT lean_object* l_ByteSlice_getD___boxed(lean_object*, lean_object*, le
 LEAN_EXPORT uint8_t l_ByteSlice_get_x21(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_get_x21___boxed(lean_object*, lean_object*);
 lean_object* lean_mk_empty_array_with_capacity(lean_object*);
-static lean_object* l_ByteSlice_empty___closed__0;
+static const lean_array_object l_ByteSlice_empty___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_array_object) + sizeof(void*)*0, .m_other = 0, .m_tag = 246}, .m_size = 0, .m_capacity = 0, .m_data = {}};
+static const lean_object* l_ByteSlice_empty___closed__0 = (const lean_object*)&l_ByteSlice_empty___closed__0_value;
 lean_object* lean_byte_array_mk(lean_object*);
-static lean_object* l_ByteSlice_empty___closed__1;
-static lean_object* l_ByteSlice_empty___closed__2;
-LEAN_EXPORT lean_object* l_ByteSlice_empty;
+static const lean_sarray_object l_ByteSlice_empty___closed__1_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_sarray_object) + 0, .m_other = 1, .m_tag = 248}, .m_size = 0, .m_capacity = 0, .m_data = {}};
+static const lean_object* l_ByteSlice_empty___closed__1 = (const lean_object*)&l_ByteSlice_empty___closed__1_value;
+static const lean_ctor_object l_ByteSlice_empty___closed__2_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_ctor_object) + sizeof(void*)*3 + 0, .m_other = 3, .m_tag = 0}, .m_objs = {((lean_object*)&l_ByteSlice_empty___closed__1_value),((lean_object*)(((size_t)(0) << 1) | 1)),((lean_object*)(((size_t)(0) << 1) | 1))}};
+static const lean_object* l_ByteSlice_empty___closed__2 = (const lean_object*)&l_ByteSlice_empty___closed__2_value;
+LEAN_EXPORT const lean_object* l_ByteSlice_empty = (const lean_object*)&l_ByteSlice_empty___closed__2_value;
 lean_object* lean_byte_array_size(lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_ofByteArray(lean_object*);
-LEAN_EXPORT lean_object* l_ByteSlice_instEmptyCollection;
-LEAN_EXPORT lean_object* l_ByteSlice_instInhabited;
+LEAN_EXPORT const lean_object* l_ByteSlice_instEmptyCollection = (const lean_object*)&l_ByteSlice_empty___closed__2_value;
+LEAN_EXPORT const lean_object* l_ByteSlice_instInhabited = (const lean_object*)&l_ByteSlice_empty___closed__2_value;
 lean_object* l_ByteArray_extract(lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_toByteArray(lean_object*);
 uint8_t lean_byteslice_beq(lean_object*, lean_object*);
@@ -54,14 +57,14 @@ static const lean_closure_object l_ByteSlice_instBEq___closed__0_value = {.m_hea
 static const lean_object* l_ByteSlice_instBEq___closed__0 = (const lean_object*)&l_ByteSlice_instBEq___closed__0_value;
 LEAN_EXPORT const lean_object* l_ByteSlice_instBEq = (const lean_object*)&l_ByteSlice_instBEq___closed__0_value;
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
-LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_foldrM___redArg(lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_foldrM(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
-LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg(lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg(lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_forM___redArg(lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_ByteSlice_forM(lean_object*, lean_object*, lean_object*, lean_object*);
@@ -367,45 +370,6 @@ x_4 = lean_box(x_3);
 return x_4;
 }
 }
-static lean_object* _init_l_ByteSlice_empty___closed__0() {
-_start:
-{
-lean_object* x_1; lean_object* x_2; 
-x_1 = lean_unsigned_to_nat(0u);
-x_2 = lean_mk_empty_array_with_capacity(x_1);
-return x_2;
-}
-}
-static lean_object* _init_l_ByteSlice_empty___closed__1() {
-_start:
-{
-lean_object* x_1; lean_object* x_2; 
-x_1 = l_ByteSlice_empty___closed__0;
-x_2 = lean_byte_array_mk(x_1);
-return x_2;
-}
-}
-static lean_object* _init_l_ByteSlice_empty___closed__2() {
-_start:
-{
-lean_object* x_1; lean_object* x_2; lean_object* x_3; 
-x_1 = lean_unsigned_to_nat(0u);
-x_2 = l_ByteSlice_empty___closed__1;
-x_3 = lean_alloc_ctor(0, 3, 0);
-lean_ctor_set(x_3, 0, x_2);
-lean_ctor_set(x_3, 1, x_1);
-lean_ctor_set(x_3, 2, x_1);
-return x_3;
-}
-}
-static lean_object* _init_l_ByteSlice_empty() {
-_start:
-{
-lean_object* x_1; 
-x_1 = l_ByteSlice_empty___closed__2;
-return x_1;
-}
-}
 LEAN_EXPORT lean_object* l_ByteSlice_ofByteArray(lean_object* x_1) {
 _start:
 {
@@ -417,22 +381,6 @@ lean_ctor_set(x_4, 0, x_1);
 lean_ctor_set(x_4, 1, x_2);
 lean_ctor_set(x_4, 2, x_3);
 return x_4;
-}
-}
-static lean_object* _init_l_ByteSlice_instEmptyCollection() {
-_start:
-{
-lean_object* x_1; 
-x_1 = l_ByteSlice_empty;
-return x_1;
-}
-}
-static lean_object* _init_l_ByteSlice_instInhabited() {
-_start:
-{
-lean_object* x_1; 
-x_1 = l_ByteSlice_empty;
-return x_1;
 }
 }
 LEAN_EXPORT lean_object* l_ByteSlice_toByteArray(lean_object* x_1) {
@@ -462,6 +410,16 @@ lean_dec_ref(x_2);
 lean_dec_ref(x_1);
 x_4 = lean_box(x_3);
 return x_4;
+}
+}
+LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6) {
+_start:
+{
+lean_object* x_7; 
+x_7 = l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0(x_1, x_2, x_3, x_4, x_5, x_6);
+lean_dec(x_2);
+lean_dec(x_1);
+return x_7;
 }
 }
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5) {
@@ -495,7 +453,7 @@ x_12 = lean_unsigned_to_nat(1u);
 lean_inc_ref(x_3);
 lean_inc(x_2);
 lean_inc(x_4);
-x_13 = lean_alloc_closure((void*)(l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0), 6, 5);
+x_13 = lean_alloc_closure((void*)(l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0___boxed), 6, 5);
 lean_closure_set(x_13, 0, x_4);
 lean_closure_set(x_13, 1, x_12);
 lean_closure_set(x_13, 2, x_1);
@@ -525,16 +483,6 @@ x_8 = l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg(x_3, x_4,
 return x_8;
 }
 }
-LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6) {
-_start:
-{
-lean_object* x_7; 
-x_7 = l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg___lam__0(x_1, x_2, x_3, x_4, x_5, x_6);
-lean_dec(x_2);
-lean_dec(x_1);
-return x_7;
-}
-}
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7) {
 _start:
 {
@@ -559,6 +507,15 @@ lean_object* x_7; lean_object* x_8;
 x_7 = lean_unsigned_to_nat(0u);
 x_8 = l___private_Std_Data_ByteSlice_0__ByteSlice_foldrM_loop___redArg(x_3, x_4, x_6, x_7, x_5);
 return x_8;
+}
+}
+LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5) {
+_start:
+{
+lean_object* x_6; 
+x_6 = l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0(x_1, x_2, x_3, x_4, x_5);
+lean_dec(x_1);
+return x_6;
 }
 }
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4) {
@@ -592,7 +549,7 @@ lean_inc(x_11);
 lean_inc_ref(x_3);
 lean_inc(x_2);
 lean_inc(x_4);
-x_12 = lean_alloc_closure((void*)(l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0), 5, 4);
+x_12 = lean_alloc_closure((void*)(l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0___boxed), 5, 4);
 lean_closure_set(x_12, 0, x_4);
 lean_closure_set(x_12, 1, x_1);
 lean_closure_set(x_12, 2, x_2);
@@ -615,15 +572,6 @@ x_6 = lean_unsigned_to_nat(1u);
 x_7 = lean_nat_add(x_1, x_6);
 x_8 = l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg(x_2, x_3, x_4, x_7);
 return x_8;
-}
-}
-LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5) {
-_start:
-{
-lean_object* x_6; 
-x_6 = l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop___redArg___lam__0(x_1, x_2, x_3, x_4, x_5);
-lean_dec(x_1);
-return x_6;
 }
 }
 LEAN_EXPORT lean_object* l___private_Std_Data_ByteSlice_0__ByteSlice_forM_loop(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5) {
@@ -1594,6 +1542,45 @@ lean_dec_ref(x_1);
 return x_3;
 }
 }
+lean_object* runtime_initialize_Init_Data_ByteArray(uint8_t builtin);
+lean_object* runtime_initialize_Init_Data_Slice_Basic(uint8_t builtin);
+lean_object* runtime_initialize_Init_Data_Slice_Notation(uint8_t builtin);
+lean_object* runtime_initialize_Init_Data_Range_Polymorphic_Nat(uint8_t builtin);
+lean_object* runtime_initialize_Init_Omega(uint8_t builtin);
+static bool _G_runtime_initialized = false;
+LEAN_EXPORT lean_object* runtime_initialize_Std_Data_ByteSlice(uint8_t builtin) {
+lean_object * res;
+if (_G_runtime_initialized) return lean_io_result_mk_ok(lean_box(0));
+_G_runtime_initialized = true;
+res = runtime_initialize_Init_Data_ByteArray(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = runtime_initialize_Init_Data_Slice_Basic(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = runtime_initialize_Init_Data_Slice_Notation(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = runtime_initialize_Init_Data_Range_Polymorphic_Nat(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = runtime_initialize_Init_Omega(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+return lean_io_result_mk_ok(lean_box(0));
+}
+static bool _G_meta_initialized = false;
+LEAN_EXPORT lean_object* meta_initialize_Std_Data_ByteSlice(uint8_t builtin) {
+lean_object * res;
+if (_G_meta_initialized) return lean_io_result_mk_ok(lean_box(0));
+_G_meta_initialized = true;
+return lean_io_result_mk_ok(lean_box(0));
+}
 lean_object* initialize_Init_Data_ByteArray(uint8_t builtin);
 lean_object* initialize_Init_Data_Slice_Basic(uint8_t builtin);
 lean_object* initialize_Init_Data_Slice_Notation(uint8_t builtin);
@@ -1604,34 +1591,35 @@ LEAN_EXPORT lean_object* initialize_Std_Data_ByteSlice(uint8_t builtin) {
 lean_object * res;
 if (_G_initialized) return lean_io_result_mk_ok(lean_box(0));
 _G_initialized = true;
-res = initialize_Init_Data_ByteArray(builtin);
+res = initialize_Init_Data_ByteArray(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_Init_Data_Slice_Basic(builtin);
+res = initialize_Init_Data_Slice_Basic(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_Init_Data_Slice_Notation(builtin);
+res = initialize_Init_Data_Slice_Notation(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_Init_Data_Range_Polymorphic_Nat(builtin);
+res = initialize_Init_Data_Range_Polymorphic_Nat(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_Init_Omega(builtin);
+res = initialize_Init_Omega(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-l_ByteSlice_empty___closed__0 = _init_l_ByteSlice_empty___closed__0();
-lean_mark_persistent(l_ByteSlice_empty___closed__0);
-l_ByteSlice_empty___closed__1 = _init_l_ByteSlice_empty___closed__1();
-lean_mark_persistent(l_ByteSlice_empty___closed__1);
-l_ByteSlice_empty___closed__2 = _init_l_ByteSlice_empty___closed__2();
-lean_mark_persistent(l_ByteSlice_empty___closed__2);
-l_ByteSlice_empty = _init_l_ByteSlice_empty();
-lean_mark_persistent(l_ByteSlice_empty);
-l_ByteSlice_instEmptyCollection = _init_l_ByteSlice_instEmptyCollection();
-lean_mark_persistent(l_ByteSlice_instEmptyCollection);
-l_ByteSlice_instInhabited = _init_l_ByteSlice_instInhabited();
-lean_mark_persistent(l_ByteSlice_instInhabited);
-return lean_io_result_mk_ok(lean_box(0));
+res = runtime_initialize_Std_Data_ByteSlice(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = meta_initialize_Std_Data_ByteSlice(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+return initialize_Std_Data_ByteSlice(builtin);
 }
 #ifdef __cplusplus
 }

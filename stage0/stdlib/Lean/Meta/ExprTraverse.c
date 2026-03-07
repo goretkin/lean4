@@ -24,15 +24,16 @@ lean_object* l_Lean_Meta_withLocalDecl___redArg(lean_object*, lean_object*, lean
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__1(lean_object*, lean_object*, lean_object*, uint8_t, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__1___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 lean_object* l_Lean_SubExpr_Pos_pushBindingDomain(lean_object*);
 lean_object* lean_expr_instantiate_rev(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 lean_object* lean_array_push(lean_object*, lean_object*);
 lean_object* l_Lean_SubExpr_Pos_pushBindingBody(lean_object*);
-LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 lean_object* lean_mk_empty_array_with_capacity(lean_object*);
-static lean_object* l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0;
+static const lean_array_object l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0_value = {.m_header = {.m_rc = 0, .m_cs_sz = sizeof(lean_array_object) + sizeof(void*)*0, .m_other = 0, .m_tag = 246}, .m_size = 0, .m_capacity = 0, .m_data = {}};
+static const lean_object* l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0 = (const lean_object*)&l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0_value;
 LEAN_EXPORT lean_object* l_Lean_Meta_traverseLambdaWithPos___redArg(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_Lean_Meta_traverseLambdaWithPos(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 lean_object* l_Lean_Meta_mkForallFVars___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
@@ -51,10 +52,10 @@ LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_travers
 lean_object* l_Lean_Meta_mkLetFVars___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__3(lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 lean_object* l_Lean_SubExpr_Pos_pushLetVarType(lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 lean_object* l_Lean_SubExpr_Pos_pushLetBody(lean_object*);
-LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_Lean_Meta_traverseLetWithPos___redArg(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_Lean_Meta_traverseLetWithPos(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
@@ -150,6 +151,15 @@ x_8 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visi
 return x_8;
 }
 }
+LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7, lean_object* x_8) {
+_start:
+{
+lean_object* x_9; 
+x_9 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8);
+lean_dec(x_2);
+return x_9;
+}
+}
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7) {
 _start:
 {
@@ -171,7 +181,7 @@ lean_inc_ref(x_3);
 lean_inc_ref(x_1);
 lean_inc(x_6);
 lean_inc_ref(x_5);
-x_13 = lean_alloc_closure((void*)(l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0), 8, 7);
+x_13 = lean_alloc_closure((void*)(l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0___boxed), 8, 7);
 lean_closure_set(x_13, 0, x_5);
 lean_closure_set(x_13, 1, x_6);
 lean_closure_set(x_13, 2, x_1);
@@ -225,15 +235,6 @@ x_11 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_vis
 return x_11;
 }
 }
-LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7, lean_object* x_8) {
-_start:
-{
-lean_object* x_9; 
-x_9 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg___lam__0(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8);
-lean_dec(x_2);
-return x_9;
-}
-}
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7, lean_object* x_8) {
 _start:
 {
@@ -242,20 +243,11 @@ x_9 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visi
 return x_9;
 }
 }
-static lean_object* _init_l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0() {
-_start:
-{
-lean_object* x_1; lean_object* x_2; 
-x_1 = lean_unsigned_to_nat(0u);
-x_2 = lean_mk_empty_array_with_capacity(x_1);
-return x_2;
-}
-}
 LEAN_EXPORT lean_object* l_Lean_Meta_traverseLambdaWithPos___redArg(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6) {
 _start:
 {
 lean_object* x_7; lean_object* x_8; 
-x_7 = l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0;
+x_7 = ((lean_object*)(l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0));
 x_8 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLambdaWithPos_visit___redArg(x_1, x_2, x_3, x_4, x_7, x_5, x_6);
 return x_8;
 }
@@ -386,7 +378,7 @@ LEAN_EXPORT lean_object* l_Lean_Meta_traverseForallWithPos___redArg(lean_object*
 _start:
 {
 lean_object* x_7; lean_object* x_8; 
-x_7 = l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0;
+x_7 = ((lean_object*)(l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0));
 x_8 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseForallWithPos_visit___redArg(x_1, x_2, x_3, x_4, x_7, x_5, x_6);
 return x_8;
 }
@@ -457,6 +449,15 @@ x_11 = lean_apply_2(x_2, lean_box(0), x_10);
 return x_11;
 }
 }
+LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7, lean_object* x_8) {
+_start:
+{
+lean_object* x_9; 
+x_9 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8);
+lean_dec(x_2);
+return x_9;
+}
+}
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7) {
 _start:
 {
@@ -479,7 +480,7 @@ lean_inc_ref(x_3);
 lean_inc_ref(x_1);
 lean_inc(x_6);
 lean_inc_ref(x_5);
-x_13 = lean_alloc_closure((void*)(l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0), 8, 7);
+x_13 = lean_alloc_closure((void*)(l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0___boxed), 8, 7);
 lean_closure_set(x_13, 0, x_5);
 lean_closure_set(x_13, 1, x_6);
 lean_closure_set(x_13, 2, x_1);
@@ -540,15 +541,6 @@ x_11 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit_
 return x_11;
 }
 }
-LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7, lean_object* x_8) {
-_start:
-{
-lean_object* x_9; 
-x_9 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg___lam__0(x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8);
-lean_dec(x_2);
-return x_9;
-}
-}
 LEAN_EXPORT lean_object* l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit(lean_object* x_1, lean_object* x_2, lean_object* x_3, lean_object* x_4, lean_object* x_5, lean_object* x_6, lean_object* x_7, lean_object* x_8) {
 _start:
 {
@@ -561,7 +553,7 @@ LEAN_EXPORT lean_object* l_Lean_Meta_traverseLetWithPos___redArg(lean_object* x_
 _start:
 {
 lean_object* x_7; lean_object* x_8; 
-x_7 = l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0;
+x_7 = ((lean_object*)(l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0));
 x_8 = l___private_Lean_Meta_ExprTraverse_0__Lean_Meta_traverseLetWithPos_visit___redArg(x_1, x_2, x_3, x_4, x_7, x_5, x_6);
 return x_8;
 }
@@ -761,18 +753,44 @@ x_7 = l_Lean_Meta_traverseChildren___redArg(x_2, x_3, x_4, x_5, x_6);
 return x_7;
 }
 }
+lean_object* runtime_initialize_Lean_SubExpr(uint8_t builtin);
+static bool _G_runtime_initialized = false;
+LEAN_EXPORT lean_object* runtime_initialize_Lean_Meta_ExprTraverse(uint8_t builtin) {
+lean_object * res;
+if (_G_runtime_initialized) return lean_io_result_mk_ok(lean_box(0));
+_G_runtime_initialized = true;
+res = runtime_initialize_Lean_SubExpr(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+return lean_io_result_mk_ok(lean_box(0));
+}
+static bool _G_meta_initialized = false;
+LEAN_EXPORT lean_object* meta_initialize_Lean_Meta_ExprTraverse(uint8_t builtin) {
+lean_object * res;
+if (_G_meta_initialized) return lean_io_result_mk_ok(lean_box(0));
+_G_meta_initialized = true;
+return lean_io_result_mk_ok(lean_box(0));
+}
 lean_object* initialize_Lean_SubExpr(uint8_t builtin);
 static bool _G_initialized = false;
 LEAN_EXPORT lean_object* initialize_Lean_Meta_ExprTraverse(uint8_t builtin) {
 lean_object * res;
 if (_G_initialized) return lean_io_result_mk_ok(lean_box(0));
 _G_initialized = true;
-res = initialize_Lean_SubExpr(builtin);
+res = initialize_Lean_SubExpr(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0 = _init_l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0();
-lean_mark_persistent(l_Lean_Meta_traverseLambdaWithPos___redArg___closed__0);
-return lean_io_result_mk_ok(lean_box(0));
+res = runtime_initialize_Lean_Meta_ExprTraverse(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = meta_initialize_Lean_Meta_ExprTraverse(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+return initialize_Lean_Meta_ExprTraverse(builtin);
 }
 #ifdef __cplusplus
 }

@@ -573,7 +573,7 @@ def generate : SynthM Unit := do
             modify fun s => { s with generatorStack := s.generatorStack.pop }
             return
     discard do withMCtx mctx do
-      withTraceNode `Meta.synthInstance
+      withTraceNode `Meta.synthInstance.apply
         (return m!"{exceptOptionEmoji ·} apply {inst.val} to {← instantiateMVars (← inferType mvar)}") do
       modifyTop fun gNode => { gNode with currInstanceIdx := idx }
       if let some (mctx, subgoals) ← tryResolve mvar inst then
@@ -897,7 +897,7 @@ def synthInstanceCore? (type : Expr) (maxResultSize? : Option Nat := none) : Met
           /-
           **Note**: The expensive `preprocessOutParam` step is morally **not** needed here because
           the output params should be uniquely determined by the input params. During type class
-          resolution, definitional equality only unfolds `[reducible]` and `[instance_reducible]`
+          resolution, definitional equality only unfolds `[reducible]` and `[implicit_reducible]`
           declarations. This is a contract with our users to ensure performance is reasonable.
           However, the same `OrderDual` declaration that creates problems for `assignOutParams`
           also prevents us from using this optimization. As an example, suppose we are trying to
@@ -982,6 +982,7 @@ register_builtin_option trace.Meta.synthInstance : Bool := {
 
 builtin_initialize
   registerTraceClass `Meta.synthPending
+  registerTraceClass `Meta.synthInstance.apply (inherited := true)
   registerTraceClass `Meta.synthInstance.instances (inherited := true)
   registerTraceClass `Meta.synthInstance.tryResolve (inherited := true)
   registerTraceClass `Meta.synthInstance.answer (inherited := true)

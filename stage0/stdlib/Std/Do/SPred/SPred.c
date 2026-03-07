@@ -14,8 +14,8 @@
 extern "C" {
 #endif
 LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg___lam__0(lean_object*, lean_object*);
-LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg(lean_object*);
 LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg___lam__0___boxed(lean_object*, lean_object*);
+LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg(lean_object*);
 LEAN_EXPORT lean_object* l_Std_Do_SPred_pure(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_Std_Do_SPred_and___lam__0(lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l_Std_Do_SPred_and(lean_object*, lean_object*, lean_object*);
@@ -38,6 +38,15 @@ LEAN_EXPORT lean_object* l_Std_Do_SPred_conjunction(lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Do_SPred_SPred_0__Std_Do_SPred_conjunction_match__1_splitter___redArg(lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Do_SPred_SPred_0__Std_Do_SPred_conjunction_match__1_splitter(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
 LEAN_EXPORT lean_object* l___private_Std_Do_SPred_SPred_0__Std_Do_SPred_conjunction_match__1_splitter___boxed(lean_object*, lean_object*, lean_object*, lean_object*, lean_object*);
+LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2) {
+_start:
+{
+lean_object* x_3; 
+x_3 = l_Std_Do_SPred_pure___redArg___lam__0(x_1, x_2);
+lean_dec(x_2);
+return x_3;
+}
+}
 LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg(lean_object* x_1) {
 _start:
 {
@@ -51,7 +60,7 @@ lean_object* x_2; lean_object* x_3;
 x_2 = lean_ctor_get(x_1, 1);
 lean_inc(x_2);
 lean_dec_ref(x_1);
-x_3 = lean_alloc_closure((void*)(l_Std_Do_SPred_pure___redArg___lam__0), 2, 1);
+x_3 = lean_alloc_closure((void*)(l_Std_Do_SPred_pure___redArg___lam__0___boxed), 2, 1);
 lean_closure_set(x_3, 0, x_2);
 return x_3;
 }
@@ -62,15 +71,6 @@ _start:
 {
 lean_object* x_3; 
 x_3 = l_Std_Do_SPred_pure___redArg(x_1);
-return x_3;
-}
-}
-LEAN_EXPORT lean_object* l_Std_Do_SPred_pure___redArg___lam__0___boxed(lean_object* x_1, lean_object* x_2) {
-_start:
-{
-lean_object* x_3; 
-x_3 = l_Std_Do_SPred_pure___redArg___lam__0(x_1, x_2);
-lean_dec(x_2);
 return x_3;
 }
 }
@@ -402,6 +402,35 @@ lean_dec(x_1);
 return x_6;
 }
 }
+lean_object* runtime_initialize_Init_Ext(uint8_t builtin);
+lean_object* runtime_initialize_Std_Do_SPred_SVal(uint8_t builtin);
+lean_object* runtime_initialize_Init_NotationExtra(uint8_t builtin);
+static bool _G_runtime_initialized = false;
+LEAN_EXPORT lean_object* runtime_initialize_Std_Do_SPred_SPred(uint8_t builtin) {
+lean_object * res;
+if (_G_runtime_initialized) return lean_io_result_mk_ok(lean_box(0));
+_G_runtime_initialized = true;
+res = runtime_initialize_Init_Ext(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = runtime_initialize_Std_Do_SPred_SVal(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = runtime_initialize_Init_NotationExtra(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+return lean_io_result_mk_ok(lean_box(0));
+}
+static bool _G_meta_initialized = false;
+LEAN_EXPORT lean_object* meta_initialize_Std_Do_SPred_SPred(uint8_t builtin) {
+lean_object * res;
+if (_G_meta_initialized) return lean_io_result_mk_ok(lean_box(0));
+_G_meta_initialized = true;
+return lean_io_result_mk_ok(lean_box(0));
+}
 lean_object* initialize_Init_Ext(uint8_t builtin);
 lean_object* initialize_Std_Do_SPred_SVal(uint8_t builtin);
 lean_object* initialize_Init_NotationExtra(uint8_t builtin);
@@ -410,16 +439,27 @@ LEAN_EXPORT lean_object* initialize_Std_Do_SPred_SPred(uint8_t builtin) {
 lean_object * res;
 if (_G_initialized) return lean_io_result_mk_ok(lean_box(0));
 _G_initialized = true;
-res = initialize_Init_Ext(builtin);
+res = initialize_Init_Ext(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_Std_Do_SPred_SVal(builtin);
+res = initialize_Std_Do_SPred_SVal(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-res = initialize_Init_NotationExtra(builtin);
+res = initialize_Init_NotationExtra(builtin)
+;
 if (lean_io_result_is_error(res)) return res;
 lean_dec_ref(res);
-return lean_io_result_mk_ok(lean_box(0));
+res = runtime_initialize_Std_Do_SPred_SPred(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+res = meta_initialize_Std_Do_SPred_SPred(builtin)
+;
+if (lean_io_result_is_error(res)) return res;
+lean_dec_ref(res);
+return initialize_Std_Do_SPred_SPred(builtin);
 }
 #ifdef __cplusplus
 }

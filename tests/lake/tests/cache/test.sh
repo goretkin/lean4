@@ -15,6 +15,14 @@ export LAKE_CACHE_DIR="$CACHE_DIR"
 test_exp ! -d "$CACHE_DIR"
 test_run cache clean
 
+# Test `lake cache services`
+LAKE_CONFIG=services.toml test_out_diff <(cat << EOF
+cdn
+bogus
+reservoir
+EOF
+) cache services
+
 # Verify packages without `enableArtifactCache` do not use the cache by default
 test_run build -f unset.toml Test:static
 test_exp ! -d "$CACHE_DIR"
@@ -94,7 +102,6 @@ test_run exe test
 # The `Test` module's artifacts are more carefully managed throught this test
 touch Ignored.lean
 test_run -v build +Ignored
-test_cmd rm -f .lake/build/lib/lean/Ignored.trace
 
 # Verify that fetching from the cache can be disabled
 test_cmd rm -f .lake/build/lib/lean/Ignored.trace
@@ -162,6 +169,10 @@ test_out "Fetched Test:c.o" build +Test:o -v --no-build
 # the cached artifact is still used via the output hash in the trace
 test_cmd rm -rf "$CACHE_DIR/outputs" .lake/build/ir/Test.c
 test_run -v build +Test:c --no-build
+
+# Verify that Lake does not attempt overwrite an existing artifact
+test_cmd rm -rf "$CACHE_DIR/outputs" .lake/build/lib/lean/Ignored.trace
+test_run -v build +Ignored
 
 # Verify that the olean does not need to be present in the build directory
 test_cmd rm -f .lake/build/lib/lean/Test.olean .lake/build/lib/lean/Test/Imported.olean
@@ -240,4 +251,4 @@ if command -v jq > /dev/null; then # skip if no jq found
 fi
 
 # Cleanup
-rm -f produced.out Ignored.lean
+rm -f produced.* Ignored.lean

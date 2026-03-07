@@ -786,6 +786,13 @@ where
     match stx with
     | .node info kind args =>
       emitLeading info
+      if kind == hygieneInfoKind then
+        -- hygieneInfo nodes contain no source text; skip content but preserve whitespace
+        for arg in args do
+          emitLeading arg.getHeadInfo
+          emitTrailing arg.getHeadInfo
+        emitTrailing info
+        return
       if isLitKind kind then
         match args with
         | #[.atom info' str] =>
@@ -910,7 +917,11 @@ def lean (name : Option Ident := none) (error warning : flag false) («show» : 
   let scopes := (← get).scopes
   let (cmds, cmdState, trees) ← withSaveInfoContext do
     let mut cmdState : Command.State := { env, maxRecDepth := ← MonadRecDepth.getMaxRecDepth, scopes }
-    let mut pstate : Parser.ModuleParserState := {pos := pos, recovering := false}
+    let mut pstate : Parser.ModuleParserState := {
+      pos
+      recovering := false
+      hasLeading := false
+    }
     let mut cmds := #[]
     repeat
       let scope := cmdState.scopes.head!

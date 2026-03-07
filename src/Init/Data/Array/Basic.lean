@@ -6,6 +6,7 @@ Authors: Leonardo de Moura
 module
 
 prelude
+public import Init.Control.Do
 public import Init.GetElem
 public import Init.Data.List.ToArrayImpl
 import all Init.Data.List.ToArrayImpl
@@ -93,7 +94,7 @@ theorem ext' {xs ys : Array α} (h : xs.toList = ys.toList) : xs = ys := by
 
 @[simp, grind =] theorem getElem?_toList {xs : Array α} {i : Nat} : xs.toList[i]? = xs[i]? := by
   simp only [getElem?_def, getElem_toList]
-  simp only [Array.size]; rfl
+  simp only [Array.size]
 
 /-- `a ∈ as` is a predicate which asserts that `a` is in the array `as`. -/
 -- NB: This is defined as a structure rather than a plain def so that a lemma
@@ -169,6 +170,15 @@ This avoids overhead due to unboxing a `Nat` used as an index.
 @[extern "lean_array_uget", simp, expose]
 def uget (xs : @& Array α) (i : USize) (h : i.toNat < xs.size) : α :=
   xs[i.toNat]
+
+/--
+Version of `Array.uget` that does not increment the reference count of its result.
+
+This is only intended for direct use by the compiler.
+-/
+@[extern "lean_array_uget_borrowed"]
+unsafe opaque ugetBorrowed (xs : @& Array α) (i : USize) (h : i.toNat < xs.size) : α :=
+  xs.uget i h
 
 /--
 Low-level modification operator which is as fast as a C array write. The modification is performed
@@ -273,7 +283,7 @@ Examples:
  * `#[1, 2].isEmpty = false`
  * `#[()].isEmpty = false`
 -/
-@[expose]
+@[expose, inline]
 def isEmpty (xs : Array α) : Bool :=
   xs.size = 0
 
@@ -367,6 +377,7 @@ Returns the last element of an array, or panics if the array is empty.
 Safer alternatives include `Array.back`, which requires a proof the array is non-empty, and
 `Array.back?`, which returns an `Option`.
 -/
+@[inline]
 def back! [Inhabited α] (xs : Array α) : α :=
   xs[xs.size - 1]!
 
@@ -376,6 +387,7 @@ Returns the last element of an array, given a proof that the array is not empty.
 See `Array.back!` for the version that panics if the array is empty, or `Array.back?` for the
 version that returns an option.
 -/
+@[inline]
 def back (xs : Array α) (h : 0 < xs.size := by get_elem_tactic) : α :=
   xs[xs.size - 1]'(Nat.sub_one_lt_of_lt h)
 
@@ -385,6 +397,7 @@ Returns the last element of an array, or `none` if the array is empty.
 See `Array.back!` for the version that panics if the array is empty, or `Array.back` for the version
 that requires a proof the array is non-empty.
 -/
+@[inline]
 def back? (xs : Array α) : Option α :=
   xs[xs.size - 1]?
 
