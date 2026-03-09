@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+source ../../../env_test.sh
+source "$TEST_DIR/util.sh"
+
+lake test
