@@ -343,25 +343,48 @@ using Unit-like types, equalities about these types were being reduced to `True`
 by `simp` (i.e., in the `grind` preprocessor), and `grind` would never see
 these facts.
 -/
+
+-- Eta-expand a non-constructor structure term `a` by asserting `a = ⟨a.1, a.2, ...⟩`.
+private def doEtaExpandStruct (a : Expr) (generation : Nat) : GoalM Unit := do
+  let aType ← whnf (← inferType a)
+  matchConstNonRecStructure aType.getAppFn (fun _ => return ()) fun inductVal us ctorVal => do
+    let params := aType.getAppArgs[*...inductVal.numParams]
+    let mut ctorApp := mkAppN (mkConst ctorVal.name us) params
+    for j in *...ctorVal.numFields do
+      let mut proj ← mkProjFn ctorVal us params j a
+      if (← isProof proj) then
+        proj ← markProof proj
+      ctorApp := mkApp ctorApp proj
+    ctorApp ← preprocessLight ctorApp
+    internalize ctorApp generation
+    let u ← getLevel aType
+    let expectedProp := mkApp3 (mkConst ``Eq [u]) aType a ctorApp
+    pushEq a ctorApp <| mkExpectedPropHint (mkApp2 (mkConst ``Eq.refl [u]) aType a) expectedProp
+
 private def propagateEtaStruct (a : Expr) (generation : Nat) : GoalM Unit := do
   unless (← getConfig).etaStruct do return ()
   let aType ← whnf (← inferType a)
-  matchConstNonRecStructure aType.getAppFn (fun _ => return ()) fun inductVal us ctorVal => do
+  matchConstNonRecStructure aType.getAppFn (fun _ => return ()) fun inductVal _us ctorVal => do
     unless a.isAppOf ctorVal.name do
       -- TODO: remove ctorVal.numFields after update stage0
       if (← isExtTheorem inductVal.name) || ctorVal.numFields == 0 then
-        let params := aType.getAppArgs[*...inductVal.numParams]
-        let mut ctorApp := mkAppN (mkConst ctorVal.name us) params
-        for j in *...ctorVal.numFields do
-          let mut proj ← mkProjFn ctorVal us params j a
-          if (← isProof proj) then
-            proj ← markProof proj
-          ctorApp := mkApp ctorApp proj
-        ctorApp ← preprocessLight ctorApp
-        internalize ctorApp generation
-        let u ← getLevel aType
-        let expectedProp := mkApp3 (mkConst ``Eq [u]) aType a ctorApp
-        pushEq a ctorApp <| mkExpectedPropHint (mkApp2 (mkConst ``Eq.refl [u]) aType a) expectedProp
+        doEtaExpandStruct a generation
+
+-- When internalizing `Eq α a b` where one side is a structure constructor and the other isn't,
+-- eta-expand the non-constructor side. This allows grind to close goals like `r = ⟨0, some 0⟩`
+-- by connecting field equalities to structure equality, without requiring `@[grind]` on the structure.
+private def propagateEtaStructForEq (e : Expr) (generation : Nat) : GoalM Unit := do
+  unless (← getConfig).etaStruct do return ()
+  let_expr Eq α a b := e | return ()
+  let αWhnf ← whnf α
+  matchConstNonRecStructure αWhnf.getAppFn (fun _ => return ()) fun inductVal _us ctorVal => do
+    unless (← isExtTheorem inductVal.name) do -- already handled by propagateEtaStruct
+      let aIsCtor := a.isAppOf ctorVal.name
+      let bIsCtor := b.isAppOf ctorVal.name
+      if aIsCtor && !bIsCtor then
+        doEtaExpandStruct b generation
+      else if bIsCtor && !aIsCtor then
+        doEtaExpandStruct a generation
 
 /-- Returns `true` if we can ignore `ext` for functions occurring as arguments of a `declName`-application. -/
 private def extParentsToIgnore (declName : Name) : Bool :=
@@ -551,6 +574,7 @@ private partial def internalizeImpl (e : Expr) (generation : Nat) (parent? : Opt
   else
     go
     propagateEtaStruct e generation
+    propagateEtaStructForEq e generation
 where
   go : GoalM Unit := do
     trace_goal[grind.internalize] "[{generation}] {e}"
